@@ -16,9 +16,9 @@ def run():
             matches = df[df["name"].str.contains(lost_name, case=False)]
             
             if matches.empty:
-                st.error("No matching items found 😭 try again")
+                st.error("No matching items found ")
             else:
-                st.success("Found possible matches 😎👇")
+                st.success("Found possible matches")
                 for i, row in matches.iterrows():
                     st.image(row["image"])
                     st.write(f"**Item:** {row['name']}")
@@ -28,6 +28,6 @@ def run():
                         df.loc[i, "status"] = "claimed"
                         df.loc[i, "claimed_by"] = student_name
                         save_items(df)
-                        st.success("Item claimed! Staff will confirm 💫")
+                        st.success("Item claimed! Staff will confirm ")
         else:
-            st.error("Type something bbg 💀")
+            st.error("fill in all the details")

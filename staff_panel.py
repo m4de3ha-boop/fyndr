@@ -9,7 +9,7 @@ def run():
 
     pw = st.text_input("Enter Staff Password:", type="password")
     if pw != PASSWORD:
-        st.warning("Wrong password 💀")
+        st.warning("Wrong password")
         return
 
     df = load_items()
@@ -28,9 +28,9 @@ def run():
 
             df.loc[len(df)] = [id, name, desc, f"images_{id}.jpg", "lost", ""]
             save_items(df)
-            st.success("Item uploaded successfully 😎✨")
+            st.success("Item uploaded successfully ")
         else:
-            st.error("Fill everything pls 💀")
+            st.error("Fill everything")
 
     st.subheader("📦 All Items")
     st.dataframe(df)
